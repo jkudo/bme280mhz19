@@ -5,7 +5,37 @@ BME280 と MH-Z19B からデータを収集します。
 - 湿度
 - 二酸化炭素濃度
 
+## Serial Portの設定
+```
+# raspi-config
+```
+```
+3 Interface Options
+P6 Serial Port
 
+Would you like a login shell to be accessible over serial? -> No
+Would you like the serial port hardware to be enabled? -> Yes
+
+再起動
+```
+```
+pip install mh-z19
+```
+
+## I2Cの設定
+```
+# raspi-config
+```
+```
+3 Interface Options
+P5 I2C
+
+Would you like the ARM I2C interface to be enabled? -> Yes
+
+一応再起動
+```
+
+## 実行
 ```
 # python sample.py
 ```
